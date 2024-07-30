@@ -1,3 +1,8 @@
 .navlogo{
     width: 230px !important;
 }
+@media (max-width: 768px) {
+    .navlogo{
+        width: 200px !important;
+    }
+  }
