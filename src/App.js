@@ -1,5 +1,6 @@
 import BannerSection from "./components/BannerSection";
-import Featuressection from "./components/Featuressection";
+
+import Homepro from "./components/Homepro";
 import Navbardol from "./components/Navbardol";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,7 +10,8 @@ function App() {
     <div>
       <Navbardol/>
       <BannerSection/>
-      <Featuressection/>
+      <Homepro/>
+    
     </div>
   );
 }
