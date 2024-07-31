@@ -20,7 +20,7 @@ const BannerSection = () => {
             className="banner-image d-sm-none" 
           />
           <div className="banner-content text-center">
-            <p className="banner-title">Discover Adorable Kids' Outfits</p>
+            <p className="banner-title ">Discover Adorable Kids' Outfits</p>
             <p className="banner-subtitle">Comfort Meets Style</p>
             <Button variant="dark" className="banner-button">Shop Now</Button>
           </div>
