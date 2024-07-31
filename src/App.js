@@ -1,4 +1,5 @@
 import BannerSection from "./components/BannerSection";
+import Footer from "./components/Footer";
 
 import Homepro from "./components/Homepro";
 import Navbardol from "./components/Navbardol";
@@ -11,6 +12,7 @@ function App() {
       <Navbardol/>
       <BannerSection/>
       <Homepro/>
+      <Footer/>
     
     </div>
   );

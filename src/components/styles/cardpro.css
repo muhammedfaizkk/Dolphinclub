@@ -1,4 +1,7 @@
 /* Container for the card */
+.cardpro-container{
+    cursor: pointer;
+}
 .cardpro-container .cardpro-image-container {
     position: relative;
     overflow: hidden;
@@ -19,11 +22,12 @@
     padding: 5px 10px;
     font-size: 14px;
     border-radius: 5px;
+    z-index: 2; /* Ensure offer label stays on top */
 }
 
 .cardpro-card-image {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -44,4 +48,10 @@
 .cardpro-discount-price {
     font-weight: bold;
     color: black;
+}
+
+/* Hide offer section on hover */
+.cardpro-image-container:hover .cardpro-offer-label {
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }

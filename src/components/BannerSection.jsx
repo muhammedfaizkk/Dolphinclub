@@ -4,15 +4,26 @@ import './styles/bannerSection.css';
 
 const BannerSection = () => {
   return (
-    <Container fluid className="banner-container">
-      <Row className="align-items-center justify-content-center text-center text-md-left">
-        <Col md={6} xs={12} className="order-2 order-md-1">
-          <p className="banner-title">Welcome to Our Kids Wear Collection</p>
-          <p className="banner-subtitle">Stylish and Comfortable Outfits</p>
-          <Button variant="dark" className="banner-button">Shop Now</Button>
-        </Col>
-        <Col md={6} xs={12} className="d-flex justify-content-center order-1 order-md-2 mb-md-0 mb-3">
-          <Image src="./assets/images/group-beautiful-girls-boys-paste.png" alt="Banner" fluid className="banner-image" />
+    <Container fluid className="banner-container p-0">
+      <Row>
+        <Col className="p-0 position-relative">
+          <Image 
+            src="./assets/images/dolphinbanner01.jpg" 
+            alt="Banner" 
+            fluid 
+            className="banner-image d-sm-block d-none" 
+          />
+          <Image 
+            src="./assets/images/mobbanner2.jpg" 
+            alt="Banner" 
+            fluid 
+            className="banner-image d-sm-none" 
+          />
+          <div className="banner-content text-center">
+            <p className="banner-title">Discover Adorable Kids' Outfits</p>
+            <p className="banner-subtitle">Comfort Meets Style</p>
+            <Button variant="dark" className="banner-button">Shop Now</Button>
+          </div>
         </Col>
       </Row>
     </Container>

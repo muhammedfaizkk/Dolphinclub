@@ -5,100 +5,68 @@ import Cardpro from "./Cardpro";
 
 function Homepro() {
   const [showModal, setShowModal] = useState(false);
-  const [activeTab, setActiveTab] = useState("all"); // State to manage active tab
+  const [activeTab, setActiveTab] = useState("all");
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
-  const handleSelect = (key) => setActiveTab(key); // Handle tab change
+  const handleSelect = (key) => setActiveTab(key);
 
   return (
     <Container className="homepro-container">
-      <Row>
-        <Col xs={12}>
-          <Row className="align-items-center">
-            <Col lg={10} md={9} sm={8} xs={12}>
-              <Tabs
-                defaultActiveKey="all"
-                id="uncontrolled-tab-example"
-                className="homepro-tabs mb-3"
-                activeKey={activeTab}
-                onSelect={handleSelect}
-              >
-                <Tab eventKey="all" title="All">
-                  <div className='text-center'>All</div>
-                </Tab>
-                <Tab eventKey="girls" title="Girls">
-                  <div className='text-center'>Girls</div>
-                </Tab>
-                <Tab eventKey="boys" title="Boys">
-                  <div className='text-center'>Boys</div>
-                </Tab>
-              </Tabs>
-            </Col>
-            <Col lg={2} md={3} sm={4} xs={12} className="homepro-right-side">
-              <Button variant="dark" onClick={handleShow} className="w-100">
-                Filter
-              </Button>
-            </Col>
-          </Row>
-
-          {/* Cards Sections */}
-          <div className="homepro-cards-sections d-flex justify-content-center align-items-center">
-            <Row >
-              {activeTab === "all" && (
-                <>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                </>
-              )}
-              {activeTab === "girls" && (
-                <>
-                  {/* Replace with actual content for Girls */}
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                </>
-              )}
-              {activeTab === "boys" && (
-                <>
-                  {/* Replace with actual content for Boys */}
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                  <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center">
-                    <Cardpro />
-                  </Col>
-                </>
-              )}
-            </Row>
+      <Row className="align-items-center">
+        <Col>
+          <div className="d-flex align-items-center justify-content-between mb-3">
+            <Tabs
+              defaultActiveKey="all"
+              id="uncontrolled-tab-example"
+              className="homepro-tabs"
+              activeKey={activeTab}
+              onSelect={handleSelect}
+            >
+              <Tab eventKey="all" title="All" />
+              <Tab eventKey="girls" title="Girls" />
+              <Tab eventKey="boys" title="Boys" />
+            </Tabs>
+            <Button variant="dark" onClick={handleShow} className="homepro-filter-button">
+              Filter
+            </Button>
           </div>
         </Col>
       </Row>
+
+      <Row className="mb-3">
+        <Col className="text-center">
+          {activeTab === "all" && <h3>All</h3>}
+          {activeTab === "girls" && <h3>Girls</h3>}
+          {activeTab === "boys" && <h3>Boys</h3>}
+        </Col>
+      </Row>
+
+      <div className="homepro-cards-sections">
+        <Row className="justify-content-center">
+          {activeTab === "all" && (
+            Array(8).fill(null).map((_, index) => (
+              <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center" key={index}>
+                <Cardpro />
+              </Col>
+            ))
+          )}
+          {activeTab === "girls" && (
+            Array(12).fill(null).map((_, index) => (
+              <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center" key={index}>
+                <Cardpro />
+              </Col>
+            ))
+          )}
+          {activeTab === "boys" && (
+            Array(4).fill(null).map((_, index) => (
+              <Col md={3} sm={6} xs={12} className="homepro-card d-flex justify-content-center align-items-center" key={index}>
+                <Cardpro />
+              </Col>
+            ))
+          )}
+        </Row>
+      </div>
 
       <Modal show={showModal} onHide={handleClose} centered>
         <Modal.Header closeButton>

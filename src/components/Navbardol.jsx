@@ -20,7 +20,7 @@ function Navbardol() {
       <Navbar expand="lg" >
         <Container >
           <Navbar.Brand href="#">
-            <img className='navlogo' src="./assets/logo/logoblack.png" alt="" />
+            <img className='navlogo' src="./assets/logo/Logoblck1.png" alt="" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
